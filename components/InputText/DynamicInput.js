@@ -1,13 +1,19 @@
 import React, { useState } from 'react'
-import { View, FlatList, TextInput, Button, StyleSheet, Text } from 'react-native'
-import styled from 'styled-components/native';
+import { 
+	View, 
+	FlatList, 
+	TextInput, 
+	Button, 
+	StyleSheet, 
+	Text, 
+	TouchableHighlight, 
+	TouchableOpacity 
+} from 'react-native'
+import styled from 'styled-components';
 
 const DynamicInput = (props) => {
-    const [textInputData, setTextInputData] = useState([{
-        id: 0,
-        value: ''
-    }])
-    const [hideComponet, setHideComponent] = useState(false);
+	// let firstState = 
+    const [textInputData, setTextInputData] = useState(props.stateData)
 
     // props.dataFromState = textInputData;
 
@@ -28,22 +34,28 @@ const DynamicInput = (props) => {
 							}),
 						)}
 						onChange={() => props.getData(textInputData)}
-						placeholder={`textInput ke ${item.id}`}
+						placeholder={`Jobdesc ${item.id+1}`}
 						value={item.value}
 						style={styles.input}
 					/>
 				</View>
-				<View style={styles.rowBut}>
+				<View style={styles.columnBut}>
 					{
-						index !== 0 ? 
-							<Button
-								color='red'
-								onPress={() => setTextInputData(textInputData.filter(data => data.id !== item.id),
-								)}
-								title='-'
-								style={styles.button}
-							/>  
-							: <Button
+						index !== 0 ? <TouchableOpacity
+							style={buttonStyles.squareMin}
+							onPress={() => setTextInputData(textInputData.filter(data => data.id !== item.id),
+							)}
+							
+						>
+							{/* <View style={buttonStyles.square}> */}
+								<Text
+									style={buttonStyles.text}
+								>-</Text>
+							{/* </View> */}
+						</TouchableOpacity>
+						:
+						<TouchableOpacity 
+							style={buttonStyles.square}
 							onPress={() => setTextInputData([
 									...textInputData,
 									{
@@ -52,8 +64,11 @@ const DynamicInput = (props) => {
 									}
 								]
 							)}
-							title='+'
-						/>
+						>
+							<Text
+								style={buttonStyles.text}
+							>+</Text>	
+						</TouchableOpacity>
 					}
 
 				</View>
@@ -80,11 +95,12 @@ const styles = StyleSheet.create({
 		marginBottom: 10,
 		// borderWidth:1,
 	},
-	rowBut:{
-		paddingTop: 5,
-	},
 	column:{
 		width: "92%"
+	},
+	columnBut:{
+		width: "8%",
+		paddingTop: 0,
 	},
 	input:{
 		flex: 1,
@@ -92,8 +108,29 @@ const styles = StyleSheet.create({
 		borderRadius: 5,
 		height: 45,
 	},
-	button:{
+});
+
+const buttonStyles = StyleSheet.create({
+	square:{
+		// color: "blue",
+		backgroundColor: "#45b4fe",
+		width: 20,
 		height: 45,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	squareMin:{
+		// color: "blue",
+		backgroundColor: "#ec4c47",
+		width: 20,
+		height: 45,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	text:{
+		fontSize: 20,
+		fontWeight: '600',
+		color: 'white',
 	},
 });
 

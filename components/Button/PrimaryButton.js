@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View } from 'react-native'
 import styled from 'styled-components/native';
 
 const PrimaryButton = (props) => {
@@ -14,36 +14,12 @@ const PrimaryButton = (props) => {
     )
 }
 
-const PageButton = StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 0,
-    },
-    text: {
-      fontSize: 30,
-      color: '#000'
-    },
-});
-
 
 const TextButton = styled.Text`
     position:absolute;
     font-size: 15px;
     padding: 4px 13px;
     color: #F4F4F4;
-`;
-
-const ButtonNew = styled.TouchableOpacity`
-    position: relative;
-    width: 10px;
-    height: 18px;
-    background-color: #FF7314; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 15px;
 `;
 
 const MyButton = styled.TouchableOpacity(
