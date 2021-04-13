@@ -6,7 +6,7 @@ const PrimaryButton = (props) => {
     return (
         <View style={{flex: 1, flexDirection: 'row', alignItems:'stretch'}}>
             <View>
-                <MyButton {...props} onPress={()=>{console.log('log Push')}}>
+                <MyButton {...props}>
                     <TextButton>Login</TextButton>
                 </MyButton>
             </View>

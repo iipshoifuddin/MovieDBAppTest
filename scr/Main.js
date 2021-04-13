@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, ImageBackground, SafeAreaView, ScrollView, Text, StatusBar } from 'react-native'
-import { BackHandler } from 'react-native'
+import { BackHandler } from 'react-native';
 
 import Header from '../components/Header/MainHeader';
 import InputTextRegister from '../components/InputText/InputTextRegister';
@@ -61,7 +61,6 @@ class Main extends Component {
         return formIsValid;
     }
     onHandlePressButton = () =>{
-        const { navigation } = this.props;
         const validation = this.IsEmailValid();
         if(validation){
             // console.log("You Can Go");
@@ -71,7 +70,7 @@ class Main extends Component {
 
     render() {
         const { navigation } = this.props;
-
+        // console.log(navigation);
         return (
             <View style={styles.container}>
                 <SafeAreaView style={styles.container}>
@@ -107,6 +106,9 @@ class Main extends Component {
                                                     navigation.navigate('Register')}}
                                                 /> : <Button
                                                     name="Register"
+                                                    onPress={()=>{
+                                                        navigation.navigate('Register')}
+                                                    }
                                                 />
                                         }
                                         

@@ -41,7 +41,7 @@ class Step1 extends Component {
   componentDidMount=()=>{
     const { getState } = this.state;
     this.setState({
-      radio : getState.radio,
+      radio : getState.radio ? getState.radio : 0 ,
       address : getState.address,
       phone : getState.phone 
     });    
@@ -55,6 +55,7 @@ class Step1 extends Component {
       radio : this.state.radio,
       address : this.state.address,
       phone : this.state.phone, 
+      password: "12345",
     });
 
     // Go to next step

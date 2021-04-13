@@ -12,6 +12,7 @@ import {
 import Header from '../../../components/Header/MainHeader';
 import MyButton from '../../../components/Button/TertiaryButton';
 import ButtonOutline from '../../../components/Button/ButtonOutline';
+import ModalCenter from '../../../components/Modal/CenterModal';
 
 class Step3 extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class Step3 extends Component {
       totalSteps: "",
       currentStep: "",
       getState: [],
+      finishModal: false,
     };
   }
 
@@ -46,6 +48,8 @@ class Step3 extends Component {
     // Go to previous step
     back();
   }
+  moveScreen = () =>{
+  }
   getRadioValue = value => this.setState({
       radio: value
   })
@@ -60,114 +64,123 @@ class Step3 extends Component {
     getState.jobDesc !== undefined ? showjobList = getState.jobDesc : showjobList; 
     return (
     <View style={styles.container}>
-        <SafeAreaView style={styles.container}>
-            <ScrollView style={styles.scrollView}>
-                <Header />
-                <Text style={textStyles.label1}>Confirmation Data of Entry</Text>
-                <View style={styles.row}>
-                    <View style={[styles.column]}>
-                      <Text style={textStyles.label2}>Fullname</Text>
-                    </View>
-                    <View style={[styles.middleColumn,{minWidth: "3%"}]}><Text>:</Text></View>
-                    <View style={styles.column}>
-                        <Text style={textStyles.label3}>{`${getState.firstName !== undefined ? 
-                            getState.firstName : ""} ${getState.lastName !==undefined ? 
-                            getState.lastName : ""}`}
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.column}>
-                      <Text style={textStyles.label2}>Jobdesc</Text>
-                    </View>
-                    <View style={[styles.middleColumn ,{minWidth: "4%"}]}><Text>:</Text></View>
-                    <View style={styles.column}>
-                        {
-                            showjobList.map((data, index)=>{
-                                return(
-                                    <Text 
-                                        key={index}
-                                        style={textStyles.label3}
-                                    >
-                                        {`${data.value}`}
-                                    </Text>
-                                )
-                            })
-                        }
-                    </View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.column}>
-                      <Text style={textStyles.label2}>Gender</Text>
-                    </View>
-                    <View style={[styles.middleColumn ,{minWidth: "4%"}]}><Text>:</Text></View>
-                    <View style={styles.column}>
-                        <Text style={textStyles.label3}>{`${getState.gender !== undefined ? 
-                            getState.gender :""}`}
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.column}>
-                      <Text style={textStyles.label2}>Email</Text>
-                    </View>
-                    <View style={[styles.middleColumn ,{minWidth: "4%"}]}><Text>:</Text></View>
-                    <View style={styles.column}>
-                        <Text style={textStyles.label3}>{`${getState.email !== undefined ? 
-                            getState.email :""}`}
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.column}>
-                      <Text style={textStyles.label2}>Have a Laptop/PC ?</Text>
-                    </View>
-                    <View style={[ styles.middleColumn ,{minWidth: "4%"}]}><Text>:</Text></View>
-                    <View style={styles.column}>
-                        <Text style={textStyles.label3}>{`${getState.radio !== undefined ? 
-                            getState.radio ? "Yes" : "No" :""}`}
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.column}>
-                      <Text style={textStyles.label2}>Mobile Number</Text>
-                    </View>
-                    <View style={[ styles.middleColumn,{minWidth: "4%"}]}><Text>:</Text></View>
-                    <View style={styles.column}>
-                        <Text style={textStyles.label3}>{`${getState.phone !== undefined ? 
-                            getState.phone :""}`}
-                        </Text>
-                    </View>
-                </View>
-                <View style={styles.row}>
-                    <View style={styles.column}>
-                      <Text style={textStyles.label2}>Address</Text>
-                    </View>
-                    <View style={[styles.middleColumn,{minWidth: "4%"}]}><Text>:</Text></View>
-                    <View style={styles.column}>
-                        <Text style={textStyles.label3}>{`${getState.address !== undefined ? 
-                            getState.address :""}`}
-                        </Text>
-                    </View>
-                </View>
-                <View style={buttonStyles.row}>
-                  <View style={[buttonStyles.column, {maxWidth: '21.4%'}]}></View>
-                    <View style={buttonStyles.column}>
-                      <ButtonOutline 
-                        name="Back"
-                        onPress={()=>{this.goBack()}}
-                      />
-                    </View>
-                    <View style={buttonStyles.column}>
-                        <MyButton 
-                          name="Submit"
-                          onPress={()=>{this.nextStep()}}
+        <SafeAreaView style={[styles.container]}>
+            <ScrollView style={styles.scrollView}
+              contentContainerStyle={{ flexGrow: 1 }}
+            >
+                <ModalCenter 
+                  isOpen={this.state.finishModal}
+                  onClosed={()=>this.setState({finishModal: false})}
+                  onPressButton={()=>this.nextStep()}
+                />
+                <ScrollView style={styles.scrollViewSecondary}>
+                  <Header />
+                  <Text style={textStyles.label1}>Confirmation Data of Entry</Text>
+                  <View style={styles.row}>
+                      <View style={[styles.column]}>
+                        <Text style={textStyles.label2}>Fullname</Text>
+                      </View>
+                      <View style={[styles.middleColumn,{minWidth: "3%"}]}><Text>:</Text></View>
+                      <View style={styles.column}>
+                          <Text style={textStyles.label3}>{`${getState.firstName !== undefined ? 
+                              getState.firstName : ""} ${getState.lastName !==undefined ? 
+                              getState.lastName : ""}`}
+                          </Text>
+                      </View>
+                  </View>
+                  <View style={styles.row}>
+                      <View style={styles.column}>
+                        <Text style={textStyles.label2}>Jobdesc</Text>
+                      </View>
+                      <View style={[styles.middleColumn ,{minWidth: "4%"}]}><Text>:</Text></View>
+                      <View style={styles.column}>
+                          {
+                              showjobList.map((data, index)=>{
+                                  return(
+                                      <Text 
+                                          key={index}
+                                          style={textStyles.label3}
+                                      >
+                                          {`${data.value}`}
+                                      </Text>
+                                  )
+                              })
+                          }
+                      </View>
+                  </View>
+                  <View style={styles.row}>
+                      <View style={styles.column}>
+                        <Text style={textStyles.label2}>Gender</Text>
+                      </View>
+                      <View style={[styles.middleColumn ,{minWidth: "4%"}]}><Text>:</Text></View>
+                      <View style={styles.column}>
+                          <Text style={textStyles.label3}>{`${getState.gender !== undefined ? 
+                              getState.gender :""}`}
+                          </Text>
+                      </View>
+                  </View>
+                  <View style={styles.row}>
+                      <View style={styles.column}>
+                        <Text style={textStyles.label2}>Email</Text>
+                      </View>
+                      <View style={[styles.middleColumn ,{minWidth: "4%"}]}><Text>:</Text></View>
+                      <View style={styles.column}>
+                          <Text style={textStyles.label3}>{`${getState.email !== undefined ? 
+                              getState.email :""}`}
+                          </Text>
+                      </View>
+                  </View>
+                  <View style={styles.row}>
+                      <View style={styles.column}>
+                        <Text style={textStyles.label2}>Have a Laptop/PC ?</Text>
+                      </View>
+                      <View style={[ styles.middleColumn ,{minWidth: "4%"}]}><Text>:</Text></View>
+                      <View style={styles.column}>
+                          <Text style={textStyles.label3}>{`${getState.radio !== undefined ? 
+                              getState.radio ? "Yes" : "No" :""}`}
+                          </Text>
+                      </View>
+                  </View>
+                  <View style={styles.row}>
+                      <View style={styles.column}>
+                        <Text style={textStyles.label2}>Mobile Number</Text>
+                      </View>
+                      <View style={[ styles.middleColumn,{minWidth: "4%"}]}><Text>:</Text></View>
+                      <View style={styles.column}>
+                          <Text style={textStyles.label3}>{`${getState.phone !== undefined ? 
+                              getState.phone :""}`}
+                          </Text>
+                      </View>
+                  </View>
+                  <View style={styles.row}>
+                      <View style={styles.column}>
+                        <Text style={textStyles.label2}>Address</Text>
+                      </View>
+                      <View style={[styles.middleColumn,{minWidth: "4%"}]}><Text>:</Text></View>
+                      <View style={styles.column}>
+                          <Text style={textStyles.label3}>{`${getState.address !== undefined ? 
+                              getState.address :""}`}
+                          </Text>
+                      </View>
+                  </View>
+                  <View style={buttonStyles.row}>
+                    <View style={[buttonStyles.column, {maxWidth: '21.4%'}]}></View>
+                      <View style={buttonStyles.column}>
+                        <ButtonOutline 
+                          name="Back"
+                          onPress={()=>{this.goBack()}}
                         />
-                    </View>
-                </View>            
+                      </View>
+                      <View style={buttonStyles.column}>
+                          <MyButton 
+                            name="Submit"
+                            onPress={()=>{this.setState({finishModal: true})}}
+                          />     
+                      </View>
+                  </View>
+                </ScrollView>
             </ScrollView>
-        </SafeAreaView>
+        </SafeAreaView>    
     </View>
     );
   }
@@ -180,6 +193,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
+  },
+  scrollViewSecondary: {
+    flex: 1,
+    marginHorizontal: 0,
+    position: "absolute",
   },
   scrollView: {
       flex: 1,

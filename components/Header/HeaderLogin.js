@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import ButtonLogin from '../Button/PrimaryButton';
 import Icon from '../../assets/logoFix.png';
 
-const MainHeader = () => {
+const HeaderLogin = () => {
   const navigation = useNavigation();
     return (
       // Try setting `flexDirection` to `column`.
@@ -21,11 +21,11 @@ const MainHeader = () => {
             </View>
             <View style={{width: "30%", height: 50}} />
             <View style={{width: "30%", height: 50}} >
-              <ButtonPosition>
+              {/* <ButtonPosition>
                 <ButtonLogin
                   onPress={()=>navigation.navigate("Login")}
                 />
-              </ButtonPosition>
+              </ButtonPosition> */}
             </View>
         </View>
       </View>
@@ -59,5 +59,5 @@ const page = StyleSheet.create({
     },
 });
 
-export default MainHeader;
+export default HeaderLogin;
 

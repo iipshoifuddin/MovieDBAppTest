@@ -10,8 +10,8 @@ const Stack = createStackNavigator();
 import MainScreen from './scr/Main';
 import HomeScreen from './scr/Home';
 import ProfileScreen from './scr/Profile';
+import LoginScreen from './scr/Auth/Login';
 import RegisterScreen from './scr/Auth/Register';
-
 
 function Route(){
     return (
@@ -21,10 +21,11 @@ function Route(){
                 headerShown: false
             }}
             >
-                <Stack.Screen name="Register" component={RegisterScreen} />
                 <Stack.Screen name="Main" component={MainScreen}/>
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Profile" component={ProfileScreen} />
+                <Stack.Screen name="Login" component={LoginScreen} />
+                <Stack.Screen name="Register" component={RegisterScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );
