@@ -1,6 +1,6 @@
 <h1 align="center">The Movie DB</h1>
 <p align="center">
-  <img width="250" src="./Screenshot/logo.png"/>
+  <img height="100" src="./Screenshot/logo.png"/>
   <img height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png">
 </p>
 <p align="center">
