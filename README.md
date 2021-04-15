@@ -35,7 +35,7 @@
 ## Screenshots
 
 <div align="center">
-    <img width="250" src="./Screenshot/Screen1.jpg">
+    <img width="250" src="./Screenshot/Screeen1.jpg">
     <img width="250" src="./Screenshot/Screen2.jpg">
     <img width="250" src="./Screenshot/Screen3.jpg">
     <img width="250" src="./Screenshot/Screen4.jpg">
@@ -51,10 +51,6 @@
 <a href="https://drive.google.com/file/d/19vG8tZST8PppDRgYSoX9AislQXgS6vig/view?usp=sharing">
   <img src="https://img.shields.io/badge/Download%20from-Google%20Drive-blue.svg?style=popout&logo=google-drive"/>
 </a>
-
-## Related Project (Backend)
-
-- [`Backend TaniBox`](https://github.com/reihnagm/TaniBox-Backend)
 
 ## Contributors
 
