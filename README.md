@@ -1,6 +1,6 @@
-<h1 align="center">TaniBox</h1>
+<h1 align="center">The Movie DB</h1>
 <p align="center">
-  <img width="250" src="./src/public/images/logo.png"/>
+  <img width="250" src="./Screenshot/logo.png"/>
   <img height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png">
 </p>
 <p align="center">
@@ -12,10 +12,8 @@
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Usage](#usage-for-development)
-- [Create Environment Variable](#create-environment-variable)
 - [Screenshots](#screenshots)
 - [Release APK](#release-apk)
-- [Related Project](#related-project-backend)
 - [Contributors](#contributors)
 
 ## Introduction
@@ -49,7 +47,7 @@
 
 ## Release APK
 
-<a href="https://drive.google.com/file/d/1C3gwW5q147gR0uOQyVVjwpkiTuskn1ul/view?usp=sharing">
+<a href="https://drive.google.com/file/d/19vG8tZST8PppDRgYSoX9AislQXgS6vig/view?usp=sharing">
   <img src="https://img.shields.io/badge/Download%20from-Google%20Drive-blue.svg?style=popout&logo=google-drive"/>
 </a>
 
@@ -65,7 +63,7 @@
 </ul>
   <table align="center">
     <tr>   
-      <td align="center">
+      <td align="flex-start">
         <a href="https://github.com/iipshoifuddin">
           <img width="100" src="https://avatars3.githubusercontent.com/u/57024333?s=400&v=4" alt="iipshoifuddin"><br/>
         </a>
