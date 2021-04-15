@@ -54,14 +54,14 @@ ONESIGNAL_API_KEY=Your Onesignal API Key
 ## Screenshots
 
 <div align="center">
-    <img width="250" src="./Screenshot/screen1.jpg">
-    <img width="250" src="./Screenshot/screen2.jpg">
-    <img width="250" src="./Screenshot/screen3.jpg">
-    <img width="250" src="./Screenshot/screen4.jpg">
-    <img width="250" src="./Screenshot/screen5.jpg">
-    <img width="250" src="./Screenshot/screen6.jpg">
-    <img width="250" src="./Screenshot/screen7.jpg">
-    <img width="250" src="./Screenshot/screen8.jpg">
+    <img width="250" src="./Screenshot/Screen1.jpg">
+    <img width="250" src="./Screenshot/Screen2.jpg">
+    <img width="250" src="./Screenshot/Screen3.jpg">
+    <img width="250" src="./Screenshot/Screen4.jpg">
+    <img width="250" src="./Screenshot/Screen5.jpg">
+    <img width="250" src="./Screenshot/Screen6.jpg">
+    <img width="250" src="./Screenshot/Screen7.jpg">
+    <img width="250" src="./Screenshot/Screen8.jpg">
 </div>
 
 ## Release APK
